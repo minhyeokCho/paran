@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* ============================== [ 메인 ] ========================================================================================== */
+header {display: none;}
+.sec_main {display: none;}
+/* -------------------- #메인 슬라이드 ---------------------------------------- */
+.sec_main_slide {background-color: #fff; padding: 6rem;}
+.main_slide {border-radius: 52px;}
+.main_slide .swiper-wrapper {}
+.main_slide .item {position: relative;}
+.main_slide .txt_wrap {position: absolute; left: 30px; bottom: 30px;}
+.main_slide .txt_wrap h2 {color: #fff;}
+.main_slide .txt_wrap p {color: #fff;}
+.main_slide .arr_swiper {}
+.main_slide .main_arr {}
+.main_slide .main_arr.arr_prev {}
+.main_slide .swiper_bullet {}
+.main_slide .main_arr.arr_next {}
+
+@media screen and (max-width:1200px) {
+
+}
+
+@media screen and (max-width:768px) {
+
+}
+
+
+.sec_main_slide .scroll {}
+.sec_brand {}
+.sec_brand .brand_tit {}
+.sec_brand .brand_tit h2 {}
+.sec_brand .brand_tit h2 span {}
+.sec_brand .brand_tit p {}
+.sec_brand .brand {}
+.sec_brand .brand .logo {}
+.sec_brand .brand strong {}
+.sec_brand .brand p {}
+.sec_value {}
+.sec_value .sec_tit {}
+.sec_value .sec_tit h2 {}
+.sec_value .value_card {position: sticky; left: 0; top: 0;}
+.sec_value .card {position: sticky; left: 0; top: 0; width: 100vw; height: 50vw;}
+.sec_value .card2 {top: 20px;}
+.sec_value .card3 {top: 40px;}
+.sec_value .card h3 {}
+.sec_value .card p {}
+.sec_design {}
+.sec_design .sec_tit {}
+.sec_design .sec_tit h2 {}
+.sec_design .sec_tit p {}
+.sec_design .design_slide {} /* 오타 조심! design_slide */
+.sec_design .design_slide .swiper-wrapper {}
+.sec_design .design_slide .swiper-slide {}
+.sec_design .design_slide .txt_wrap {}
+.sec_design .design_slide .txt_wrap h3 {}
+.sec_design .design_slide .txt_wrap p {}
+.sec_design .design_slide .arr_swiper {}
+.sec_design .design_slide .main_arr {}
+.sec_design .design_slide .main_arr.arr_prev {}
+.sec_design .design_slide .main_arr.arr_next {}
+.sec_design .design_slide .swiper_bullet {}
+.blind {}
+
+
+.swiper_bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 불렛과 숫자 사이 간격 */
+    margin-top: 20px; /* 슬라이드와의 간격 */
+}
+
+/* 불렛들을 감싸는 컨테이너 */
+.bullet-wrap {
+    display: flex;
+    gap: 8px; /* 불렛들 사이 간격 */
+}
+
+/* 개별 불렛 스타일 */
+.custom-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 활성화된 불렛 스타일 */
+.custom-bullet.active {
+    background-color: #007bff; /* 활성화된 불렛 색상 */
+}
+
+/* 숫자 표시 부분 스타일 */
+.fraction {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}

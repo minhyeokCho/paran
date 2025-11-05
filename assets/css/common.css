@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import url(setting.css);
+/* ************************************************************************************************************************************************************
+						《 공통 레이아웃 스타일 》
+************************************************************************************************************************************************************ */
+
+/*
+	z-index 위계
+
+	.site_wrap		999
+	#header			100
+	.quick_menu 		10
+	.float_wrap		10
+	팝업딤드		9990
+	팝업			9999
+*/
+
+/* ============================== [ 레이아웃 리셋 Layout Reset ] ========================================================================================== */
+/* Reset */
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+abbr,address,big,cite,code,del,dfn,font,figure,figcaption,img,ins,q,s,samp,small,strike,sub,sup,tt,var,
+b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {font:16px/1.2em 'Pretendard',sans-serif;}
+button,input,textarea {font:16px/1.2em 'Pretendard',sans-serif;}
+select {font:16px/1.2em 'Pretendard',sans-serif;}
+::selection {color:#fff; background-color:#b70f28;}
+.go_view {position:absolute; left:0; top:0; height:100%; width:100%;}
+figure img {display:block; width:100%; height:auto; object-fit:cover;}
+* {word-wrap:break-word; word-break:keep-all;}
+
+/* ============================== [ 공통레이아웃 ] ========================================================================================== */
+.inner {width:100%; max-width:1480px; margin:0 auto; padding:0 20px; box-sizing:border-box;}
+
+/* -------------------- #header ---------------------------------------- */
+html {font-size:62.5%;}
+body {font-size:1.6rem;}
+@media only screen and (max-width: 768px) {
+    html {font-size:56.3%;}
+}
+@media only screen and (min-width: 768px) and (max-width: 1239px){
+    html {font-size:56.3%;}
+}
+@media only screen and (max-width: 767px) {
+    html {font-size:50%;}
+}
