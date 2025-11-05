@@ -8,11 +8,6 @@
 	z-index 위계
 
 	.site_wrap		999
-	#header			100
-	.quick_menu 		10
-	.float_wrap		10
-	팝업딤드		9990
-	팝업			9999
 */
 
 /* ============================== [ 레이아웃 리셋 Layout Reset ] ========================================================================================== */
@@ -22,10 +17,10 @@ abbr,address,big,cite,code,del,dfn,font,figure,figcaption,img,ins,q,s,samp,small
 b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {font:16px/1.2em 'Pretendard',sans-serif;}
 button,input,textarea {font:16px/1.2em 'Pretendard',sans-serif;}
 select {font:16px/1.2em 'Pretendard',sans-serif;}
-::selection {color:#fff; background-color:#b70f28;}
+::selection {color:#fff; background-color:#004538;}
 .go_view {position:absolute; left:0; top:0; height:100%; width:100%;}
 figure img {display:block; width:100%; height:auto; object-fit:cover;}
-* {word-wrap:break-word; word-break:keep-all;}
+* {word-wrap:break-word; word-break:keep-all; box-sizing: border-box;}
 
 /* ============================== [ 공통레이아웃 ] ========================================================================================== */
 .inner {width:100%; max-width:1480px; margin:0 auto; padding:0 20px; box-sizing:border-box;}
@@ -42,3 +37,20 @@ body {font-size:1.6rem;}
 @media only screen and (max-width: 767px) {
     html {font-size:50%;}
 }
+
+/* ============================== [ header ] ========================================================================================== */
+header {padding: 3.6rem 6rem; width: 100%; display: flex; align-items: center; justify-content: space-between; position: fixed; left: 0; top: 0; z-index: 100; background-color: #fff;}
+header h1 a {width: 23.9rem;}
+header nav {width: 38%;}
+header nav ul {display: flex; justify-content: space-between;}
+header nav ul a {font-size: 2rem; font-weight: 700; padding: 2rem 0;}
+header .util {display: flex; align-items: center; gap:2.4rem}
+header .util button {width: 17.8rem; height: 4.7rem; border-radius: 2.4rem; font-size: 1.8rem; font-weight: 700; background-color: #bcad96; color: #fff;}
+header .util a {padding-left: 3.4rem; font-weight: 600; background: url(../images/common/icon_call.png) no-repeat left center; background-size: 2.2rem; font-size: 2rem; line-height: 2.2rem;}
+header .util a span {font-weight: 700;}
+
+
+
+
+
+

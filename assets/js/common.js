@@ -44,16 +44,15 @@ function mainSlide () {
 
 function designSlide () {
 	var designSlide = new Swiper('.design_slide', {
-		slidesPerView : '5',
-		spaceBetween : 20,
+		slidesPerView : 'auto',
+		spaceBetween : 60,
 		loop:true,
 		loopAdditionalSlides : 1,
 		speed:800,
-		autoHeight : true, // 높이 자동 조정
 		watchOverflow:true, //페이지가 1개 일 경우 페이징 버튼 숨김
 		observer: true, // display:none 오류
 		observeParents: true,
-		// centeredSlides: true,
+		centeredSlides: true,
 		// autoplay:{
 		// 	delay:500,
 		// 	disableOnInteraction:false
