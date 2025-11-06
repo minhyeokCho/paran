@@ -40,7 +40,9 @@ body {font-size:1.6rem;}
 
 /* ============================== [ header ] ========================================================================================== */
 header {padding: 3.6rem 6rem; width: 100%; display: flex; align-items: center; justify-content: space-between; position: fixed; left: 0; top: 0; z-index: 100; background-color: #fff;}
-header h1 a {width: 23.9rem;}
+header .mo_menu {display: none;}
+header h1 a {width: 23.9rem; display: block;}
+header h1 a img {width: 100%; height: auto; object-fit: cover;}
 header nav {width: 38%;}
 header nav ul {display: flex; justify-content: space-between;}
 header nav ul a {font-size: 2rem; font-weight: 700; padding: 2rem 0;}
@@ -69,6 +71,18 @@ footer .f_cont .img_cc {}
 footer .f_cont .img_cc img {}
 footer .f_cont .copy {}
 
+@media screen and (max-width:1200px) {
+	header {padding-left: 20px; padding-right: 20px;}
+	header h1 a {width: 20rem;}
+	header nav ul a {font-size: 1.8rem;}
+}
+
+@media screen and (max-width:1024px) {
+	header .mo_menu {display: block;}
+	header nav {display: none;}
+	header .util button {display: none;}
+	header .util a {text-indent: -9999px; width: 0;}
+}
 
 
 

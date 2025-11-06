@@ -7,7 +7,7 @@
 .sec_main {cursor: none; height: 100vh; display: flex; align-items: center; justify-content: center;}
 .sec_main::after {display: block; content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: #004538; opacity: .5; z-index: 2;}
 .sec_main .video_wrap {position: absolute; width: 100%; height: 100vh; overflow: hidden; z-index: 1;}
-.sec_main video {position: absolute; left: 0; top: 0; width: 100%; height: 100vh;}
+.sec_main video {position: absolute; left: 0; top: 0; width: auto; height: 100vh;}
 .sec_main .cont {position: relative; height: 755px; width: 508px; display: flex; align-items: center; flex-direction: column; background:url(../images/main/bg_visual.png) no-repeat center; background-size: 100% auto; z-index: 3}
 .sec_main .cont .top_logo {width: 136px; padding-top: 67px;}
 .sec_main .cont .txt_img {width: 315px; padding-top: 98px;}
@@ -20,7 +20,7 @@
 .cursor::after {display: block; content: 'Skip'; width: 8rem; height: 8rem; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; background-color: #bcad96; color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 2.1rem; font-weight: 500;}
 
 /* -------------------- #메인 슬라이드 ---------------------------------------- */
-.sec_main_slide {background-color: #fff; padding: 6rem; position: relative;}
+.sec_main_slide {background-color: #fff; padding:15rem 6rem 6rem; position: relative;}
 .main_slide {border-radius: 5.2rem;}
 .main_slide .item {position: relative; height: 805px;}
 .main_slide .item video {position: absolute; left: 0; top: 0; width: 100%; height: 100%;object-position: center; object-fit: cover;}
@@ -41,7 +41,7 @@
 .bullet-wrap {display: flex; align-items: center; gap:1.7rem;}
 .bullet-wrap .custom-bullet {width: 0.8rem; height: 0.8rem; background-color: #fff; border-radius: 50%; transition:1.3s;}
 .bullet-wrap .custom-bullet.active {width: 6.7rem; border-radius: .4rem;}
-
+.sec_main_slide .open {position: absolute; right: 10rem; top: 10rem;}
 .sec_main_slide .scroll {position: absolute; right: 16rem; bottom: 6rem; z-index: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; gap:2rem;}
 .sec_main_slide .scroll span {font-size: 1.4rem; font-weight: 700; color: #fff;  }
 .sec_main_slide .scroll span.bar {position: relative; width: 1px; height: 10.5rem; background-color: rgba(255, 255, 255, .5);}
@@ -94,7 +94,7 @@
 
 /* -------------------- #value ---------------------------------------- */
 .sec_design {padding-top: 21.6rem; padding-bottom: 16rem;}
-.sec_design .sec_tit {margin-bottom: 6rem;}
+.sec_design .sec_tit {margin-bottom: 6rem; position: relative;}
 .sec_design .sec_tit::before {display: block; content: ''; width: 1px; height: 16rem; background-color: #cdcdcd; position: absolute; left: 50%; top: 0;}
 .sec_design .sec_tit .img {width: 28.2rem; margin: 0 auto;}
 .sec_design .sec_tit h2 { font-family: 'Athena'; font-size: 9rem; text-align: center;}
@@ -171,6 +171,6 @@
 
 }
 
-@media screen and (max-width:768px) {
-
+@media screen and (max-width:1024px) {
+	.sec_main_slide .scroll {display: none;}
 }
