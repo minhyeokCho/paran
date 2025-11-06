@@ -3,13 +3,21 @@
 /* ============================== [ 메인 ] ========================================================================================== */
 
 /* -------------------- #메인 visual ---------------------------------------- */
-.sec_main {height: 100vh; min-height: 900px; background-color: #1a473d; display: flex; align-items: center; justify-content: center;}
-.sec_main .cont {position: relative; height: 755px; width: 508px; display: flex; align-items: center; flex-direction: column; background:url(../images/main/bg_visual.png) no-repeat center; background-size: 100% auto;}
+.sec_main {cursor: none; height: 100vh; display: flex; align-items: center; justify-content: center;}
+.sec_main::after {display: block; content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: #004538; opacity: .5; z-index: 2;}
+.sec_main .video_wrap {position: absolute; width: 100%; height: 100vh; overflow: hidden; z-index: 1;}
+.sec_main video {position: absolute; left: 0; top: 0; width: 100%; height: 100vh;}
+.sec_main .cont {position: relative; height: 755px; width: 508px; display: flex; align-items: center; flex-direction: column; background:url(../images/main/bg_visual.png) no-repeat center; background-size: 100% auto; z-index: 3}
 .sec_main .cont .top_logo {width: 136px; padding-top: 67px;}
 .sec_main .cont .txt_img {width: 315px; padding-top: 98px;}
 .sec_main .cont .main_logo {width: 193px; padding-top: 27px;}
 .sec_main .cont .btm_logo {width: 109px; position: absolute; left: 50%; transform: translateX(-50%); bottom: 15px;}
 .sec_main .cont i {margin-top: 30px; display: block; width: 1px; height: 75px; background-color: rgba(255, 255, 255, .5);}
+
+
+.cursor {width: 15rem; height: 15rem; position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
+.cursor::after {display: block; content: 'Skip'; width: 8rem; height: 8rem; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; background-color: #bcad96; color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 2.1rem; font-weight: 500;}
+
 /* -------------------- #메인 슬라이드 ---------------------------------------- */
 .sec_main_slide {background-color: #fff; padding: 6rem; position: relative;}
 .main_slide {border-radius: 5.2rem;}
@@ -93,26 +101,36 @@
 .sec_design .design_slide .design_bullet .swiper-pagination-progressbar-fill {background-color: #111;}
 
 /* -------------------- #value ---------------------------------------- */
+.sticky {position: sticky; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden;}
+.sticky .bg_wrap {width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2; transform: translateY(50%);}
+.sticky .bg_wrap::after {content: ""; position: absolute; background: rgba(0, 0, 0, 0); inset: var(--brandBgMask); box-shadow: 40px 40px 60px rgba(0, 0, 0, .2); z-index: 1;}
+.sticky .bg_wrap .mask {width: 100%; height: 100%; -webkit-clip-path: inset(var(--brandBgMask)); clip-path: inset(var(--brandBgMask)); will-change: clip-path; position: relative; z-index: 2;}
+.sticky .bg_wrap .mask .bg {width: 100%; height: 100%; background: url(../images/main/bg_enhance.png) no-repeat center;}
 
-.sec_enhance .tit_area {height: 100vh; min-height: 900px; background-color: #f8f4ee;}
-.sec_enhance .tit_area .txt_wrap {height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column;}
-.sec_enhance .tit_area .txt_wrap .img {width: 28.2rem;}
-.sec_enhance .tit_area .txt_wrap h2 {display: flex; align-items: flex-end; margin-top: 1rem; font-size: 130px; font-family: 'Athena'; line-height: 1;}
-.sec_enhance .tit_area .txt_wrap h2 ~ h2 {margin-top: 0;}
-.sec_enhance .tit_area .txt_wrap h2 i {display: block; width: 320px; height: 3px; background-color: #020202; margin-top: -3px;}
-.sec_enhance .box {background: url(../images/main/bg_enhance.png) no-repeat center; background-size: cover;}
-.sec_enhance .box .txt_content {padding-top: 22rem; height: 1000px; max-width: 1600px; width: 100%; margin: 0 auto; display: flex; justify-content: space-between; gap:2rem}
-.sec_enhance .box .txt_content > i {display: block; margin-top: 4rem; height: 1px; background-color: rgba(255, 255, 255, .5); flex:1;} 
-.sec_enhance .box .txt_content .txt_l {margin-top: -3rem;}
-.sec_enhance .box .txt_content .txt_l h3 {font-size: 11.2rem; font-family: 'Athena'; color: #fff; line-height: 1;}
-.sec_enhance .box .txt_content .txt_l h3::after {content: '.'; color: #004538;}
-.sec_enhance .box .txt_content .txt_l p {margin-top: 3rem; font-size: 2.4rem;  font-family: 'Athena'; color: #fff;}
-.sec_enhance .box .txt_content .txt_r {text-align: right; color: #fff; padding-right: 9rem;}
-.sec_enhance .box .txt_content .txt_r strong {font-weight: 700; font-size: 4.8rem; line-height: 1.5;}
-.sec_enhance .box .txt_content .txt_r p {color: #fff; font-size: 2rem; line-height: 1.5; }
-.sec_enhance .box .txt_content .txt_r p.txt_01 {margin-top: 5rem; font-weight: 300;}
-.sec_enhance .box .txt_content .txt_r p.txt_02 {margin-top: 3rem; font-weight: 500;}
-.sec_enhance .box .txt_content .txt_r .img {margin-top: 5rem; width: 12.2rem; margin-left: auto;}
+.sec_enhance {height: 400vh;--brandBgMask: 50% 50% 50% 50%;}
+.sec_enhance .intro_wrap {position: absolute; left: 0; top: 0; width: 100%; height: 100vh; background-color: #f8f4ee; z-index: 1;}
+.sec_enhance .intro_wrap .txt_wrap {height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column;}
+.sec_enhance .intro_wrap .txt_wrap .img {width: 28.2rem;}
+.sec_enhance .intro_wrap .txt_wrap h2 {display: flex; align-items: flex-end; margin-top: 1rem; font-size: 130px; font-family: 'Athena'; line-height: 1;}
+.sec_enhance .intro_wrap .txt_wrap h2 ~ h2 {margin-top: 0;}
+.sec_enhance .intro_wrap .txt_wrap h2 i {display: block; width: 320px; height: 3px; background-color: #020202; margin-top: -3px;}
+.sec_enhance .cont_wrap {width: 100%; height: 100%; position: relative; z-index: 3;}
+.sec_enhance .cont_wrap .txt_content {padding-top: 22rem; height: 1000px; max-width: 1600px; width: 100%; margin: 0 auto; display: flex; justify-content: space-between; gap:2rem}
+.sec_enhance .cont_wrap .txt_content > i {display: block; margin-top: 4rem; height: 1px; background-color: rgba(255, 255, 255, .5); flex:1;} 
+.sec_enhance .cont_wrap .txt_content .txt_l {margin-top: -3rem;}
+.sec_enhance .cont_wrap .txt_content .txt_l h3 {font-size: 11.2rem; font-family: 'Athena'; color: #fff; line-height: 1;}
+.sec_enhance .cont_wrap .txt_content .txt_l h3::after {content: '.'; color: #004538;}
+.sec_enhance .cont_wrap .txt_content .txt_l p {margin-top: 3rem; font-size: 2.4rem;  font-family: 'Athena'; color: #fff;}
+.sec_enhance .cont_wrap .txt_content .txt_r {text-align: right; color: #fff; padding-right: 9rem;}
+.sec_enhance .cont_wrap .txt_content .txt_r strong {font-weight: 700; font-size: 4.8rem; line-height: 1.5;}
+.sec_enhance .cont_wrap .txt_content .txt_r p {color: #fff; font-size: 2rem; line-height: 1.5; }
+.sec_enhance .cont_wrap .txt_content .txt_r p.txt_01 {margin-top: 5rem; font-weight: 300;}
+.sec_enhance .cont_wrap .txt_content .txt_r p.txt_02 {margin-top: 3rem; font-weight: 500;}
+.sec_enhance .cont_wrap .txt_content .txt_r .img {margin-top: 5rem; width: 12.2rem; margin-left: auto;}
+
+
+
+
 
 @media screen and (max-width:1200px) {
 

@@ -1,8 +1,39 @@
 /* 《 스크립트 》 */
 $(document).ready(function(){
+	$('.sec_main').length && intro(); //인트로
 	$('.main_slide').length && mainSlide(); //메인 슬라이드
 	$('.design_slide').length && designSlide(); //design 슬라이드
+	gsap.registerPlugin(ScrollTrigger);
+
+	webMotion()
+	const customCursor = document.querySelector('.cursor');
+
+	document.addEventListener('mousemove', (e) => {
+		// 마우스의 X, Y 좌표를 가져와서 커스텀 커서의 위치를 업데이트
+		customCursor.style.left = e.clientX + 'px';
+		customCursor.style.top = e.clientY + 'px';
+	});
+
+	// 마우스가 웹페이지 밖으로 나가면 커서를 숨기고 싶을 때 (선택 사항)
+	document.addEventListener('mouseleave', () => {
+		customCursor.style.opacity = '0';
+	});
+
+	// 마우스가 웹페이지 안으로 들어오면 커서를 보이게 (선택 사항)
+	document.addEventListener('mouseenter', () => {
+		customCursor.style.opacity = '1';
+	});
 });
+
+function intro() {
+	$("#contanier").hide();
+
+    $(".sec_main").on("click", function() {
+        $(this).fadeOut(400, function() {
+            $("#contanier").fadeIn(200);
+        });
+    });
+}
 
 function mainSlide () {
 	var mainSlide = new Swiper('.main_slide', {
@@ -66,4 +97,76 @@ function designSlide () {
 			type: 'progressbar',
 		},
 	})
+}
+function webMotion(){
+	var $sec = $(".sec_enhance");
+	var brandTrigger;
+	// Timeline 생성
+	brandTrigger = gsap.timeline({
+		scrollTrigger: {
+			trigger: $sec,
+			id: "brandTrigger",
+			scrub: true,
+			// markers: true,
+			start: "top top",
+			end: "bottom bottom"
+		}
+	})
+	.to($sec, {
+		duration: 0.1,
+		ease: "none",
+		onStart: function(){
+			lottieA.setDirection(1);
+			lottieA.play();
+		},
+		onReverseComplete: function(){
+			lottieA.setDirection(-1);
+			lottieA.play();
+		}
+	})
+	.to($sec.find(".intro_wrap").find(".txt"), {
+		y: "-80%",
+		duration: 0.6,
+		delay: 0.4,
+		ease: "none"
+	}, "scene1")
+	.to($sec.find(".bg_wrap"), {
+		y: 0,
+		duration: 1,
+		ease: "none",
+	}, "scene1")
+	.to($sec, {
+		"--brandBgMask": "25% 38% 15% 38%",
+		duration: 0.5,
+		ease: "none",
+		onComplete: function () {
+			if (!$sec.find(".bg_wrap").hasClass("active")) {
+				$sec.find(".bg_wrap").addClass("active");
+			}
+		},
+		onUpdate: function () {
+			if ($sec.find(".bg_wrap").hasClass("active")) {
+				$sec.find(".bg_wrap").removeClass("active");
+			}
+		}
+	}, "scene2")
+	.to($sec, {
+		"--brandBgMask": "0% 0% 0% 0%",
+		duration: 1,
+		ease: "none",
+		onComplete: function () {
+			if (!$sec.find(".cont_wrap").hasClass("active")) {
+				$sec.find(".cont_wrap").addClass("active");
+			}
+		},
+		onUpdate: function () {
+			if ($sec.find(".cont_wrap").hasClass("active")) {
+				$sec.find(".cont_wrap").removeClass("active");
+			}
+		}
+	}, "scene3")
+	.to($sec, {
+		duration: 1,
+		ease: "none"
+	}, "scene3-blank");
 }

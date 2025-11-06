@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>엘리프세종스마트시티</title>
+	<!-- GSAP Core 라이브러리 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<!-- ScrollTrigger 플러그인 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 	<link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="./assets/css/lib/aos.css" />
 	<link rel="stylesheet" href="./assets/css/common.css" />
@@ -15,30 +19,10 @@
 	<script src="./assets/js/common.js"></script>
 </head>
 <body>
-	<!-- header -->
-	<header>
-		<h1>
-			<a href="#" title="엘리프세종스마트시티">
-				<img src="./assets/images/common/logo_main.png" alt="엘리프">
-			</a>
-		</h1>
-		<nav>
-			<ul>
-				<li><a href="#"><span>사업개요</span></a></li>
-				<li><a href="#"><span>브랜드소개</span></a></li>
-				<li><a href="#"><span>프리미엄</span></a></li>
-				<li><a href="#"><span>오시는길</span></a></li>
-				<li><a href="#"><span>관심고객등록</span></a></li>
-			</ul>
-		</nav>
-		<div class="util">
-			<button type="button">관심고객등록</button>
-			<a href="#" class="tel">044) <span>884.5543</span></a>
-		</div>
-	</header>
-	<!--// header -->
-
 	<section class="sec_main">
+		<figure class="video_wrap">
+			<video src="./assets/images/video/intro_01.mp4" autoplay loop muted></video>
+		</figure>
 		<div class="cont">
 			<div class="top_logo img">
 				<img src="./assets/images/main/logo_top.png" alt="ENHANCE YOUR LIFE">
@@ -54,8 +38,31 @@
 				<img src="./assets/images/main/logo_visual.png" alt="ENHANCE YOUR LIFE">
 			</div>
 		</div>
+		<div class="cursor"></div>
 	</section>
 	<div id="contanier">
+		<!-- header -->
+		<header>
+			<h1>
+				<a href="#" title="엘리프세종스마트시티">
+					<img src="./assets/images/common/logo_main.png" alt="엘리프">
+				</a>
+			</h1>
+			<nav>
+				<ul>
+					<li><a href="#"><span>사업개요</span></a></li>
+					<li><a href="#"><span>브랜드소개</span></a></li>
+					<li><a href="#"><span>프리미엄</span></a></li>
+					<li><a href="#"><span>오시는길</span></a></li>
+					<li><a href="#"><span>관심고객등록</span></a></li>
+				</ul>
+			</nav>
+			<div class="util">
+				<button type="button">관심고객등록</button>
+				<a href="#" class="tel">044) <span>884.5543</span></a>
+			</div>
+		</header>
+		<!--// header -->
 		<section class="sec_main_slide">
 			<div class="main_slide swiper">
 				<div class="swiper-wrapper">
@@ -214,16 +221,23 @@
 			</div>
 		</section>
 		<section class="sec_enhance">
-			<div class="tit_area">
-				<div class="txt_wrap">
-					<figure class="img">
-						<img src="./assets/images/main/txt_enhance.png" alt="ELIF세종">
-					</figure>
-					<h2>ENHANCE</h2>
-					<h2>YOUR<i></i>LIFE</h2>
+			<div class="sticky">
+				<div class="bg_wrap">
+					<div class="mask">
+						<div class="bg"></div>
+					</div>
+				</div>
+				<div class="intro_wrap">
+					<div class="txt_wrap">
+						<figure class="img">
+							<img src="./assets/images/main/txt_enhance.png" alt="ELIF세종">
+						</figure>
+						<h2>ENHANCE</h2>
+						<h2>YOUR<i></i>LIFE</h2>
+					</div>
 				</div>
 			</div>
-			<div class="box">
+			<div class="cont_wrap">
 				<div class="txt_content">
 					<div class="txt_l">
 						<h3>BRAND</h3>
@@ -245,6 +259,7 @@
 				</div>
 			</div>
 		</section>
+		<div style="height: 2000px;"></div>
 	</div>
 </body>
 </html>
