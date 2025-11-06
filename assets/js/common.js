@@ -50,26 +50,23 @@ function intro() {
 
 			AOS.refresh();
 			ScrollTrigger.refresh();
+			$('.main_slide').length && mainSlide();
         });
     });
 }
 
 function mainSlide () {
 	var mainSlide = new Swiper('.main_slide', {
-		slidesPerView : '1',
-		spaceBetween : 0,
-		loop:true,
-		loopAdditionalSlides : 1,
-		speed:800,
-		autoHeight : true, // 높이 자동 조정
-		watchOverflow:true, //페이지가 1개 일 경우 페이징 버튼 숨김
-		observer: true, // display:none 오류
-		observeParents: true,
+		slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    loopAdditionalSlides: 1,
+    speed: 800,
+    autoHeight: true,
+    watchOverflow: true,
+    observer: true,
+    observeParents: true,
 		// centeredSlides: true,
-		// autoplay:{
-		// 	delay:500,
-		// 	disableOnInteraction:false
-		// },
 		navigation : {
 			prevEl : '.main_arr.arr_prev',
 			nextEl : '.main_arr.arr_next',
@@ -89,7 +86,45 @@ function mainSlide () {
 				`
 			}
 		},
+    on: {
+      init() {
+        // 초기 실행 시 첫 슬라이드의 비디오만 재생
+        playActiveVideo();
+      },
+      slideChangeTransitionStart() {
+        // 넘어갈 때 모든 비디오 정지
+        pauseAllVideos();
+      },
+      slideChangeTransitionEnd() {
+
+        // 새 슬라이드 비디오 재생
+        playActiveVideo();
+      }
+    }
 	})
+
+	
+  // 모든 비디오에 ended 이벤트 연결
+  document.querySelectorAll('.main_slide video').forEach(video => {
+    video.addEventListener('ended', function () {
+      mainSlide.slideNext(); // 영상 끝나면 다음 슬라이드
+    });
+  });
+
+  function pauseAllVideos() {
+    document.querySelectorAll('.main_slide video').forEach(v => {
+      v.pause();
+      v.currentTime = 0;
+    });
+  }
+
+  function playActiveVideo() {
+    const v = document.querySelector('.main_slide .swiper-slide-active video');
+    if (!v) return;
+    v.muted = true; // 자동재생 보장
+    const p = v.play();
+    if (p && typeof p.then === 'function') p.catch(()=>{});
+  }
 }
 
 function designSlide () {
