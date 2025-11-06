@@ -3,12 +3,10 @@ $(document).ready(function(){
 	$('.sec_main').length && intro(); //인트로
 	$('.main_slide').length && mainSlide(); //메인 슬라이드
 	$('.design_slide').length && designSlide(); //design 슬라이드
-  gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.set(".sec_enhance", {"--brandBgMask":"50% 38% 0% 38%"});
+	webMotion();
 
-  // 초기값을 JS로도 한 번 박아주면 브라우저별 이슈 줄어듦
-  gsap.set(".sec_enhance", {"--brandBgMask":"50% 50% 50% 50%"});
-
-  webMotion();
 	const customCursor = document.querySelector('.cursor');
 
 	document.addEventListener('mousemove', (e) => {
@@ -26,6 +24,21 @@ $(document).ready(function(){
 	document.addEventListener('mouseenter', () => {
 		customCursor.style.opacity = '1';
 	});
+
+	const lenis = new Lenis({
+		smoothWheel: true,
+		smoothTouch: false,
+		duration: 1.1,
+		easing: (t)=>1-Math.pow(1-t,3)
+	});
+
+	function raf(t){
+		lenis.raf(t);
+		requestAnimationFrame(raf)
+	}
+	requestAnimationFrame(raf)
+
+	lenis.on('scroll', ScrollTrigger.update)
 });
 
 function intro() {
@@ -34,6 +47,9 @@ function intro() {
     $(".sec_main").on("click", function() {
         $(this).fadeOut(400, function() {
             $("#contanier").fadeIn(200);
+
+			AOS.refresh();
+			ScrollTrigger.refresh();
         });
     });
 }
@@ -129,12 +145,12 @@ function webMotion(){
       }
     })
     // 존재하는 요소로 변경: .txt → .txt_wrap
-    .to($sec.find(".intro_wrap .txt_wrap"), {
-      y: "-80%",
-      duration: 0.6,
-      delay: 0.4,
-      ease: "none"
-    }, "scene1")
+    // .to($sec.find(".intro_wrap .txt_wrap"), {
+    //   y: "-80%",
+    //   duration: 0.6,
+    //   delay: 0.4,
+    //   ease: "none"
+    // }, "scene1")
     .to($sec.find(".bg_wrap"), {
       y: 0,
       duration: 1,
