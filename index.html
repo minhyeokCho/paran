@@ -11,6 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 	<script src="https://unpkg.com/@studio-freight/lenis/dist/lenis.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap">
 	<link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="./assets/css/lib/aos.css" />
 	<link rel="stylesheet" href="./assets/css/common.css" />
@@ -23,7 +24,10 @@
 <body>
 	<section class="sec_main">
 		<figure class="video_wrap">
-			<video src="./assets/images/video/intro_01.mp4" autoplay  muted></video>
+			<video autoplay loop muted playsinline preload="metadata">
+				<source src="./assets/images/video/intro_01.mp4" type="video/mp4" media="(min-width: 768px)">
+				<source src="./assets/images/video/intro_mo.mp4" type="video/mp4" media="(max-width: 767px)">
+			</video>
 		</figure>
 		<div class="cont">
 			<div class="top_logo img"  data-aos="fade-up" data-aos-duration="1200" data-aos-delay="0">
@@ -65,6 +69,25 @@
 				<a href="#" class="tel">044) <span>884.5543</span></a>
 			</div>
 		</header>
+		<div class="m_menu">
+			<div class="m_wrap">
+				<ul>
+					<li><a href="#"><span>사업개요</span></a></li>
+					<li><a href="#"><span>입지환경</span></a></li>
+					<li><a href="#"><span>브랜드소개</span></a></li>
+					<li><a href="#"><span>프리미엄</span></a></li>
+					<li><a href="#"><span>오시는길</span></a></li>
+					<li><a href="#"><span>관심고객등록</span></a></li>
+				</ul>
+				<div class="box">
+					<ul>
+						<li><a href="#">관심고객등록</a></li>
+						<li><a href="#">언론보도</a></li>
+						<li><a href="#">오시는길</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<!--// header -->
 		<section class="sec_main_slide">
 			<div class="main_slide swiper">
@@ -75,9 +98,9 @@
 							<source src="./assets/images/video/main_m_01.mp4" type="video/mp4" media="(max-width: 767px)">
 						</video>
 						<div class="txt_wrap">
-							<img src="./assets/images/main/slide_txt_01.png" alt="nature" class="nature">
-							<h2>자연</h2>
-							<p>미호천, 금강, 세종지구공원 등<br/>풍부한 자연환경이 인접한 생활환경</p>
+							<figure class="img t1"><img src="./assets/images/main/slide_txt_01.png" alt="nature" class="nature"></figure>
+							<h2>교육</h2>
+							<p>단지와 인접하여 도보통학 가능한<br/>합강초(예정), 합강중(예정), 합강고(예정) 등의 학세권 입지</p>
 						</div>
 					</div>
 					<div class="item swiper-slide">
@@ -86,7 +109,7 @@
 							<source src="./assets/images/video/main_m_02.mp4" type="video/mp4" media="(max-width: 767px)">
 						</video>
 						<div class="txt_wrap">
-							<img src="./assets/images/main/slide_txt_01.png" alt="nature" class="nature">
+							<figure class="img t2"><img src="./assets/images/main/slide_txt_02.png" alt="nature" class="nature"></figure>
 							<h2>자연</h2>
 							<p>미호천, 금강, 세종지구공원 등<br/>풍부한 자연환경이 인접한 생활환경</p>
 						</div>
@@ -97,9 +120,9 @@
 							<source src="./assets/images/video/main_m_03.mp4" type="video/mp4" media="(max-width: 767px)">
 						</video>
 						<div class="txt_wrap">
-							<img src="./assets/images/main/slide_txt_01.png" alt="nature" class="nature">
-							<h2>자연</h2>
-							<p>미호천, 금강, 세종지구공원 등<br/>풍부한 자연환경이 인접한 생활환경</p>
+							<figure class="img t3"><img src="./assets/images/main/slide_txt_03.png" alt="nature" class="nature"></figure>
+							<h2>교통</h2>
+							<p>KTX오송역, 남청주IC, BRT, 외곽순환도로 등<br/>시, 내외 이동이 용이한 자리</p>
 						</div>
 					</div>
 					<div class="item swiper-slide">
@@ -108,9 +131,9 @@
 							<source src="./assets/images/video/main_m_04.mp4" type="video/mp4" media="(max-width: 767px)">
 						</video>
 						<div class="txt_wrap">
-							<img src="./assets/images/main/slide_txt_01.png" alt="nature" class="nature">
-							<h2>자연</h2>
-							<p>미호천, 금강, 세종지구공원 등<br/>풍부한 자연환경이 인접한 생활환경</p>
+							<figure class="img t4"><img src="./assets/images/main/slide_txt_04.png" alt="nature" class="nature"></figure>
+							<h2>미래가치</h2>
+							<p>자연친화적 기술, ICT기술의 융,복합이<br/>이루어 질 스마트시티 국가시범도시의 가치</p>
 						</div>
 					</div>
 				</div>
@@ -127,7 +150,7 @@
 				</span>
 			</div>
 			<div class="open">
-				<span class="blind">11월 open</span>
+				<span></span>
 			</div>
 		</section>
 		<section class="sec_brand">
@@ -141,7 +164,7 @@
 			<div class="brand">
 				<div class="txt_wrap">
 					<h2 class="logo" data-aos="fade-up" data-aos-duration="1000">
-						<img src="./assets/images/main/logo_wh.png" alt="엘리프세종스마트시티">
+						<figure class="img"><img src="./assets/images/main/logo_wh.png" alt="엘리프세종스마트시티"></figure>
 					</h2>
 					<strong data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">총 424세대</strong>
 					<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">59㎡ / 74㎡ / 80㎡ / 84㎡</p>
@@ -189,7 +212,7 @@
 				<div class="swiper-wrapper">
 					<div class="item swiper-slide">
 						<figure class="img">
-							<img src="./assets/images/main/design_01.png">
+							<img src="./assets/images/main/design_01.jpg">
 						</figure>
 						<div class="txt_wrap">
 							<h3>생애주기 맞춤형 타입구성</h3>
@@ -198,38 +221,38 @@
 					</div>
 					<div class="item swiper-slide">
 						<figure class="img">
-							<img src="./assets/images/main/design_02.png">
+							<img src="./assets/images/main/design_02.jpg">
 						</figure>
 						<div class="txt_wrap">
-							<h3>생애주기 맞춤형 타입구성</h3>
-							<p>세대 구성원 및 생애주기를 고려한<br/>59,74,80,84타입의 다양한 타입구성</p>
+							<h3>채광을 고려한 단지설계</h3>
+							<p>일조와 자연 채광을 고려한<br/>전 세대 남향 위주 단지배치(일부세대 제외)</p>
 						</div>
 					</div>
 					<div class="item swiper-slide">
 						<figure class="img">
-							<img src="./assets/images/main/design_03.png">
+							<img src="./assets/images/main/design_03.jpg">
 						</figure>
 						<div class="txt_wrap">
-							<h3>생애주기 맞춤형 타입구성</h3>
-							<p>세대 구성원 및 생애주기를 고려한<br/>59,74,80,84타입의 다양한 타입구성</p>
+							<h3>실용적인 평면계획</h3>
+							<p>4Bay 판상형 구조(일부세대 제외)와<br/>넓은 개방감을 주는 평면설계</p>
 						</div>
 					</div>
 					<div class="item swiper-slide">
 						<figure class="img">
-							<img src="./assets/images/main/design_04.png">
+							<img src="./assets/images/main/design_04.jpg">
 						</figure>
 						<div class="txt_wrap">
-							<h3>생애주기 맞춤형 타입구성</h3>
-							<p>세대 구성원 및 생애주기를 고려한<br/>59,74,80,84타입의 다양한 타입구성</p>
+							<h3>입주민을 배려한 단지배치</h3>
+							<p>넓은 동간거리 및 다양하고 유용한<br/>커뮤니티 시설 배치 계획</p>
 						</div>
 					</div>
 					<div class="item swiper-slide">
 						<figure class="img">
-							<img src="./assets/images/main/design_05.png">
+							<img src="./assets/images/main/design_05.jpg">
 						</figure>
 						<div class="txt_wrap">
-							<h3>생애주기 맞춤형 타입구성</h3>
-							<p>세대 구성원 및 생애주기를 고려한<br/>59,74,80,84타입의 다양한 타입구성</p>
+							<h3>제로에너지 인증 친환경 아파트</h3>
+							<p>제로에너지건축물(ZEB) 5등급이 적용된<br/>5-1생활권 프리미엄 단지</p>
 						</div>
 					</div>
 				</div>
@@ -253,7 +276,7 @@
 							<img src="./assets/images/main/txt_enhance.png" alt="ELIF세종">
 						</figure>
 						<h2>ENHANCE</h2>
-						<h2>YOUR<i></i>LIFE</h2>
+						<h2>YOUR <i></i> LIFE</h2>
 					</div>
 				</div>
 				<div class="cont_wrap">
@@ -276,6 +299,7 @@
 							</figure>
 						</div>
 					</div>
+					<div class="cursor"></div>
 				</div>
 			</div>
 		</section>
@@ -284,31 +308,31 @@
 				<div class="txt_wrap">
 					<h2 data-aos="fade-right">CONTACT US</h2>
 					<p class="desc" data-aos="fade-right" data-aos-delay="100">세종의 새로운 중심에서 빛나는 미래가치가 시작되다</p>
-					<dl data-aos="fade-right" data-aos-delay="200">
+					<dl data-aos="fade-right" data-aos-delay="100">
 						<dt>문의</dt>
 						<dd>
-							<strong>044) 864.5543</strong>
+							<span>044) 864.5543</span>
 						</dd>
 					</dl>
-					<dl data-aos="fade-right" data-aos-delay="300">
+					<dl data-aos="fade-right" data-aos-delay="200">
 						<dt>세대</dt>
 						<dd>
 							<span>총 424세대</span>
 							<strong>59㎡ / 74㎡ / 80㎡ / 84㎡ </strong>
 						</dd>
 					</dl>
-					<dl data-aos="fade-right" data-aos-delay="400">
+					<dl data-aos="fade-right" data-aos-delay="300">
 						<dt>현장</dt>
 						<dd>행정중심복합도시 5-1생활권 L9BL</dd>
 					</dl>
-					<dl data-aos="fade-right" data-aos-delay="500">
+					<dl data-aos="fade-right" data-aos-delay="400">
 						<dt>견본주택</dt>
 						<dd>세종특별자치시 대평동 123-30번지</dd>
 					</dl>
 				</div>
 				<div class="img_wrap" data-aos="fade-left" data-aos-delay="100">
 					<figure class="img">
-
+						<img src="./assets/images/main/map.jpg" alt="지도">
 					</figure>
 				</div>
 			</div>
@@ -316,7 +340,7 @@
 		<footer>
 			<div class="f_cont">
 				<figure class="img f_logo">
-					<img src="" alt="">
+					<img src="./assets/images/common/logo_main.png" alt="세종 스마트시티">
 				</figure>
 				<div class="m_info">
 					<dl>
@@ -331,6 +355,9 @@
 				<div class="pc_info">
 					<span>현장 : 044)864.5543</span>   |   <span>견본주택 : 세종특별자치시 대평동 123-30번지</span>  |   <span>총 424세대(59㎡ / 74㎡ / 80㎡ / 84㎡)</span>
 				</div>
+				<div class="mobile_txt">
+					현장 : 경남 창원명곡 공공주택지구 B-1 BL<br/>(창원시 의창구 명곡동 일원) 
+				</div>
 				<div class="f_info">
 					<p>* 각종 개발계획 및 예정사항 등은 추후 관계기관의 사정에 따라 변경 및 취소될 수 있으며, 이는 당사와 무관함을 알려드립니다. </p>
 					<p>* 본 홈페이지의 이미지, 사진 및 내용은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있습니다. </p>
@@ -341,11 +368,14 @@
 					<span>(주)한빛커뮤니케이션</span>  |  <span>사업자등록번호 : 314-81-60319</span>  | <span> 대표자 : 이성춘</span>  |  <span>주소 : 대전광역시 유성구 문지로 8(도룡동)</span>
 				</div>
 				<figure class="img img_cc">
-					<img src="" alt="">
+					<img src="./assets/images/common/f_brand.png" alt="계룡건설">
 				</figure>
 				<p class="copy">COPYRIGHT © 엘리프 세종 스마트시티. ALL RIGHTS RESERVED.</p>
 			</div>
 		</footer>
+		<div class="go_top">
+			<a href="#none"><span class="blind">상단으로 이동</span></a>
+		</div>
 	</div>
 	<script> 
 		AOS.init();

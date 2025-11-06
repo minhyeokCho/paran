@@ -3,44 +3,86 @@ $(document).ready(function(){
 	$('.sec_main').length && intro(); //인트로
 	$('.main_slide').length && mainSlide(); //메인 슬라이드
 	$('.design_slide').length && designSlide(); //design 슬라이드
+	$('.go_top').length && goTop(); //페이지상단이동
+	initLenis();
+	initCustomCursor();
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.set(".sec_enhance", {"--brandBgMask":"50% 38% 0% 38%"});
 	webMotion();
 
-	const customCursor = document.querySelector('.cursor');
+	const $mMenu = $('.m_menu');
+	const $header = $('header');
+	const $body = $('body');
 
-	document.addEventListener('mousemove', (e) => {
-		// 마우스의 X, Y 좌표를 가져와서 커스텀 커서의 위치를 업데이트
-		customCursor.style.left = e.clientX + 'px';
-		customCursor.style.top = e.clientY + 'px';
+	// 메뉴는 처음에 숨겨둔다.
+	$mMenu.hide();
+
+	// .mo_menu 버튼을 클릭했을 때 실행될 함수
+	$('.mo_menu').on('click', function() {
+		// 만약 m_menu가 보이고 있다면 (열려있다면)
+		if ($mMenu.is(':visible')) {
+			// 부드럽게 사라지게 하고, 애니메이션이 끝나면 클래스들을 제거한다.
+			$mMenu.fadeOut(0, function() { // 0.3초 동안 사라지게
+				$header.removeClass('active');
+				$body.removeClass('overflow-hidden');
+			});
+		} else { // m_menu가 숨겨져 있다면 (닫혀있다면)
+			// 먼저 클래스들을 추가하고, 부드럽게 나타나게 한다.
+			$header.addClass('active');
+			$body.addClass('overflow-hidden');
+			$mMenu.fadeIn(300); // 0.3초 동안 나타나게
+		}
 	});
+});
 
-	// 마우스가 웹페이지 밖으로 나가면 커서를 숨기고 싶을 때 (선택 사항)
-	document.addEventListener('mouseleave', () => {
-		customCursor.style.opacity = '0';
-	});
+function initCustomCursor() {
+  const cursors = document.querySelectorAll('.cursor');
+  if (!cursors.length) return;
 
-	// 마우스가 웹페이지 안으로 들어오면 커서를 보이게 (선택 사항)
-	document.addEventListener('mouseenter', () => {
-		customCursor.style.opacity = '1';
-	});
+  let x = 0, y = 0;
 
+  const onMove = (e) => {
+    x = e.clientX;
+    y = e.clientY;
+    // 다음 프레임에서 한 번에 적용
+    requestAnimationFrame(() => {
+      cursors.forEach(el => {
+        el.style.left = x + 'px';
+        el.style.top  = y + 'px';
+        el.style.opacity = '1';
+      });
+    });
+  };
+
+  const onLeave = () => {
+    cursors.forEach(el => el.style.opacity = '0');
+  };
+
+  const onEnter = () => {
+    cursors.forEach(el => el.style.opacity = '1');
+  };
+
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseleave', onLeave);
+  document.addEventListener('mouseenter', onEnter);
+}
+
+function initLenis() {
 	const lenis = new Lenis({
 		smoothWheel: true,
 		smoothTouch: false,
 		duration: 1.1,
-		easing: (t)=>1-Math.pow(1-t,3)
+		easing: (t) => 1 - Math.pow(1 - t, 3),
 	});
 
-	function raf(t){
+	function raf(t) {
 		lenis.raf(t);
-		requestAnimationFrame(raf)
+		requestAnimationFrame(raf);
 	}
-	requestAnimationFrame(raf)
 
-	lenis.on('scroll', ScrollTrigger.update)
-});
-
+	requestAnimationFrame(raf);
+	lenis.on('scroll', ScrollTrigger.update);
+}
 function intro() {
 	$("#contanier").hide();
 
@@ -51,6 +93,7 @@ function intro() {
 			AOS.refresh();
 			ScrollTrigger.refresh();
 			$('.main_slide').length && mainSlide();
+			initCustomCursor();
         });
     });
 }
@@ -58,15 +101,14 @@ function intro() {
 function mainSlide () {
 	var mainSlide = new Swiper('.main_slide', {
 		slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    loopAdditionalSlides: 1,
-    speed: 800,
-    autoHeight: true,
-    watchOverflow: true,
-    observer: true,
-    observeParents: true,
-		// centeredSlides: true,
+		spaceBetween: 0,
+		loop: true,
+		loopAdditionalSlides: 1,
+		speed: 800,
+		autoHeight: true,
+		watchOverflow: true,
+		observer: true,
+		observeParents: true,
 		navigation : {
 			prevEl : '.main_arr.arr_prev',
 			nextEl : '.main_arr.arr_next',
@@ -150,6 +192,14 @@ function designSlide () {
 			el: '.design_bullet',
 			type: 'progressbar',
 		},
+		breakpoints: {
+			768: {
+				spaceBetween: 60, // 768px 이상
+			},
+			0: {
+				spaceBetween: 30, // 768px 이하
+			},
+		},
 	})
 }
 function webMotion(){
@@ -208,4 +258,22 @@ function webMotion(){
       onUpdate(){ $sec.find(".cont_wrap").removeClass("active"); }
     }, "scene3")
     .to({}, {duration: 1, ease:"none"}, "scene3-blank");
+}
+
+function goTop(){ //페이지상단이동
+	$(window).scroll(function(){
+		var scrollTop = $(window).scrollTop();
+		if(scrollTop > 0){
+			$('.go_top').addClass('active')
+		}else{
+			$('.go_top').removeClass('active')
+		}
+	});
+
+	$('.go_top').on('click', function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 400);
+		return false;
+	});
 }

@@ -19,7 +19,7 @@ button,input,textarea {font:16px/1.2em 'Pretendard',sans-serif;}
 select {font:16px/1.2em 'Pretendard',sans-serif;}
 ::selection {color:#fff; background-color:#004538;}
 .go_view {position:absolute; left:0; top:0; height:100%; width:100%;}
-figure img {display:block; width:100%; height:auto; object-fit:cover;}
+.img img {display:block; width:100%; height:auto; object-fit:cover;}
 * {word-wrap:break-word; word-break:keep-all; box-sizing: border-box;}
 
 /* ============================== [ 공통레이아웃 ] ========================================================================================== */
@@ -37,10 +37,12 @@ body {font-size:1.6rem;}
 @media only screen and (max-width: 767px) {
     html {font-size:50%;}
 }
+body.overflow-hidden {overflow: hidden;}
 
 /* ============================== [ header ] ========================================================================================== */
-header {padding: 3.6rem 6rem; width: 100%; display: flex; align-items: center; justify-content: space-between; position: fixed; left: 0; top: 0; z-index: 100; background-color: #fff;}
-header .mo_menu {display: none;}
+header {padding: 3.6rem 6rem; width: 100%; display: flex; align-items: center; justify-content: space-between; position: fixed; left: 0; top: 0; z-index: 101; background-color: #fff; transition: .2s;}
+header.active { background-color: #e3e0d1}
+header .mo_menu {display: none; background: url(../images/common/icon_menu.png) no-repeat 0 0; width: 18px; height: 12px; background-size: 100% auto;}
 header h1 a {width: 23.9rem; display: block;}
 header h1 a img {width: 100%; height: auto; object-fit: cover;}
 header nav {width: 38%;}
@@ -52,37 +54,63 @@ header .util a {padding-left: 3.4rem; font-weight: 600; background: url(../image
 header .util a span {font-weight: 700;}
 
 /* ============================== [ footer ] ========================================================================================== */
-footer {background-color: #fff;}
-footer .f_cont {}
-footer .f_cont .f_logo {}
+footer {background-color: #fff; padding: 6rem; text-align: center;}
+footer .f_cont {position: relative;}
+footer .f_cont .f_logo {width: 31.4rem; margin: 0 auto;}
 footer .f_cont .f_logo img {}
-footer .f_cont .m_info {}
-footer .f_cont .m_info dl {}
-footer .f_cont .m_info dt {}
-footer .f_cont .m_info dd {}
-footer .f_cont .m_info dd strong {}
-footer .f_cont .pc_info {}
-footer .f_cont .pc_info span {}
-footer .f_cont .f_info {}
-footer .f_cont .f_info p {}
-footer .f_cont .addr {}
-footer .f_cont .addr span {}
-footer .f_cont .img_cc {}
-footer .f_cont .img_cc img {}
-footer .f_cont .copy {}
+footer .f_cont .m_info {display: none; margin-top: 30px;}
+footer .f_cont .m_info dl {display: flex; justify-content: center;}
+footer .f_cont .m_info dl ~ dl {margin-top: 10px;}
+footer .f_cont .m_info dt {font-size: 14px; font-weight: 700;color: #004538;}
+footer .f_cont .m_info dd {font-size: 14px; font-weight: 500;}
+footer .f_cont .m_info dd strong {font-size: 18px; font-weight: 700;}
+footer .f_cont .pc_info {margin-top: 3.5rem; font-size: 1.8rem; color: #555;}
+footer .f_cont .pc_info span {padding-right: 1.5rem;}
+footer .f_cont .pc_info span ~ span {padding-left: 1.5rem;}
+footer .f_cont .mobile_txt {display: none; font-size: 14px; color: #555; margin-top: 14px;}
+footer .f_cont .f_info {margin-top: 2rem;}
+footer .f_cont .f_info p {font-size: 1.4rem; color: #a1a1a1;}
+footer .f_cont .addr {margin-top: 2rem; font-size: 1.4rem; color: #a1a1a1;}
+footer .f_cont .addr span {padding-right: 0.8rem;}
+footer .f_cont .addr span  ~ span {padding-left: .8rem;}
+footer .f_cont .img_cc {position: absolute; left: 0; bottom: 0;}
+footer .f_cont .img_cc img {width: 24.8rem;}
+footer .f_cont .copy {color: #999; padding-top: 4rem; margin-top: 4rem; border-top: 1px solid #ebebeb;}
+
+/* ============================== [ 탑버튼 ] ========================================================================================== */
+.go_top {position:fixed; right:6rem; bottom:6rem; opacity:0; visibility:hidden; z-index:10;}
+.go_top {transition:opacity .2s, visibility .2s;}
+.go_top.active {opacity:1; visibility:visible;}
+.go_top a {display:block; height:5rem; width:5rem; background:#004538 url(../images/common/arr_top.png) no-repeat center; background-size:1.6rem auto; border-radius:50%;}
 
 @media screen and (max-width:1200px) {
 	header {padding-left: 20px; padding-right: 20px;}
-	header h1 a {width: 20rem;}
+	header h1 a {width: 20rem; height: 19px;}
 	header nav ul a {font-size: 1.8rem;}
 }
 
 @media screen and (max-width:1024px) {
+	header {padding: 20px;}
 	header .mo_menu {display: block;}
 	header nav {display: none;}
 	header .util button {display: none;}
 	header .util a {text-indent: -9999px; width: 0;}
+	footer {padding: 45px 20px 25px;}
+	footer .f_cont .pc_info {display: none;}
+	footer .f_cont .mobile_txt {display: block;}
+	footer .f_cont .f_logo {width: 170px;}
+	footer .f_cont .m_info {display: block;}
+	footer .f_cont .f_info p {font-size: 11px;}
+	footer .f_cont .addr {font-size: 11px;}
+	footer .f_cont .img_cc {position: relative;}
+	footer .f_cont .img_cc img {width: 183px; margin: 30px auto 0;}
+	footer .f_cont .copy {font-size: 11px; margin-top: 25px; padding-top: 25px;}
+	.go_top {right: 2rem; bottom: 3rem;}
 }
 
-
-
+.m_menu {display: none; position: fixed; left: 0; top: 0; padding-top: 100px; height: 100vh; z-index: 100; background-color: #e3e0d1; width: 100%;}
+.m_menu .m_wrap {padding: 0 30px;}
+.m_menu .m_wrap > ul li a {border-top: 1px solid #afada1; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; height: 50px; font-weight: 600; font-size: 20px; color: #53504e;}
+.m_menu .m_wrap .box {height: 105px; background-color: #d9d6c7; border-top: 1px solid #afada1; display: flex;; align-items: center; justify-content: center; text-align: center;}
+.m_menu .m_wrap .box ul {width: 100%;}
+.m_menu .m_wrap .box a {font-size: 14px; font-weight: 600; color: #53504e; line-height: 25px; display: block; width: 100%;}
