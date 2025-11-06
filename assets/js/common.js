@@ -3,9 +3,12 @@ $(document).ready(function(){
 	$('.sec_main').length && intro(); //인트로
 	$('.main_slide').length && mainSlide(); //메인 슬라이드
 	$('.design_slide').length && designSlide(); //design 슬라이드
-	gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-	webMotion()
+  // 초기값을 JS로도 한 번 박아주면 브라우저별 이슈 줄어듦
+  gsap.set(".sec_enhance", {"--brandBgMask":"50% 50% 50% 50%"});
+
+  webMotion();
 	const customCursor = document.querySelector('.cursor');
 
 	document.addEventListener('mousemove', (e) => {
@@ -99,74 +102,59 @@ function designSlide () {
 	})
 }
 function webMotion(){
-	var $sec = $(".sec_enhance");
-	var brandTrigger;
-	// Timeline 생성
-	brandTrigger = gsap.timeline({
-		scrollTrigger: {
-			trigger: $sec,
-			id: "brandTrigger",
-			scrub: true,
-			// markers: true,
-			start: "top top",
-			end: "bottom bottom"
-		}
-	})
-	.to($sec, {
-		duration: 0.1,
-		ease: "none",
-		onStart: function(){
-			lottieA.setDirection(1);
-			lottieA.play();
-		},
-		onReverseComplete: function(){
-			lottieA.setDirection(-1);
-			lottieA.play();
-		}
-	})
-	.to($sec.find(".intro_wrap").find(".txt"), {
-		y: "-80%",
-		duration: 0.6,
-		delay: 0.4,
-		ease: "none"
-	}, "scene1")
-	.to($sec.find(".bg_wrap"), {
-		y: 0,
-		duration: 1,
-		ease: "none",
-	}, "scene1")
-	.to($sec, {
-		"--brandBgMask": "25% 38% 15% 38%",
-		duration: 0.5,
-		ease: "none",
-		onComplete: function () {
-			if (!$sec.find(".bg_wrap").hasClass("active")) {
-				$sec.find(".bg_wrap").addClass("active");
-			}
-		},
-		onUpdate: function () {
-			if ($sec.find(".bg_wrap").hasClass("active")) {
-				$sec.find(".bg_wrap").removeClass("active");
-			}
-		}
-	}, "scene2")
-	.to($sec, {
-		"--brandBgMask": "0% 0% 0% 0%",
-		duration: 1,
-		ease: "none",
-		onComplete: function () {
-			if (!$sec.find(".cont_wrap").hasClass("active")) {
-				$sec.find(".cont_wrap").addClass("active");
-			}
-		},
-		onUpdate: function () {
-			if ($sec.find(".cont_wrap").hasClass("active")) {
-				$sec.find(".cont_wrap").removeClass("active");
-			}
-		}
-	}, "scene3")
-	.to($sec, {
-		duration: 1,
-		ease: "none"
-	}, "scene3-blank");
+  const $sec = $(".sec_enhance");
+
+  // Lottie가 없다면 훅 무시 (에러 방지)
+  const safeLottie = window.lottieA && typeof lottieA.play === "function" ? lottieA : null;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: $sec,
+      id: "brandTrigger",
+      scrub: true,
+      // markers: true,
+      start: "top top",
+      end: "bottom bottom"
+    }
+  });
+
+  tl.to($sec, {
+      duration: 0.1,
+      ease: "none",
+      onStart(){
+        if(safeLottie){ safeLottie.setDirection(1); safeLottie.play(); }
+      },
+      onReverseComplete(){
+        if(safeLottie){ safeLottie.setDirection(-1); safeLottie.play(); }
+      }
+    })
+    // 존재하는 요소로 변경: .txt → .txt_wrap
+    .to($sec.find(".intro_wrap .txt_wrap"), {
+      y: "-80%",
+      duration: 0.6,
+      delay: 0.4,
+      ease: "none"
+    }, "scene1")
+    .to($sec.find(".bg_wrap"), {
+      y: 0,
+      duration: 1,
+      ease: "none"
+    }, "scene1")
+    // CSS 변수(clip-path inset) 트윈: 중앙 작은 마스크 → 좀 더 넓게
+    .to($sec, {
+      "--brandBgMask": "25% 38% 15% 38%",
+      duration: 0.5,
+      ease: "none",
+      onComplete(){ $sec.find(".bg_wrap").addClass("active"); },
+      onUpdate(){ $sec.find(".bg_wrap").removeClass("active"); }
+    }, "scene2")
+    // 전체 화면 풀오픈
+    .to($sec, {
+      "--brandBgMask": "0% 0% 0% 0%",
+      duration: 1,
+      ease: "none",
+      onComplete(){ $sec.find(".cont_wrap").addClass("active"); },
+      onUpdate(){ $sec.find(".cont_wrap").removeClass("active"); }
+    }, "scene3")
+    .to({}, {duration: 1, ease:"none"}, "scene3-blank");
 }
