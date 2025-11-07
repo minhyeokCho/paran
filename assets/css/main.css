@@ -217,7 +217,7 @@
 	.sec_main_slide .scroll {display: none;}
 	.sec_value {padding: 80px 15px 0;}
 	.sec_value .card::after {left: 35px;}
-	.sec_value .card {border-radius: 27px; height: 550px;}
+	.sec_value .card {border-radius: 27px; height: 550px; margin-top: -50px;}
 	.sec_value .card1 {top: 60px;}
 	.sec_value .card2 {top: 80px;}
 	.sec_value .card3 {top: 100px;}
@@ -236,7 +236,7 @@
 	.sec_main_slide .open  {right: 40px; top: 130px;}
 }
 @media screen and (max-width:768px) {
-	.sec_main video {min-height: 0;}
+	.sec_main video {min-height: 700px;}
 	.sec_main .cont {width: 273px; height: 405px;}
 	.sec_main .cont .top_logo {width: 68px; padding-top: 37px;}
 	.sec_main .cont .txt_img {width: 157px; padding-top: 67px;}

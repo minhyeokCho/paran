@@ -44,7 +44,7 @@
 		<div class="cursor"></div>
 	</section>
 	<div id="contanier">
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/include/header.php') ?>
+		<?php include __DIR__ . '/include/header.php'; ?>
 		<section class="sec_main_slide">
 			<div class="main_slide swiper">
 				<div class="swiper-wrapper">
@@ -293,7 +293,7 @@
 				</div>
 			</div>
 		</section>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/include/footer.php') ?>
+		<?php include __DIR__ . '/include/footer.php'; ?>
 		<div class="go_top">
 			<a href="#none"><span class="blind">상단으로 이동</span></a>
 		</div>

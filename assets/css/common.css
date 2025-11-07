@@ -90,6 +90,7 @@ footer .f_cont .copy {color: #999; padding-top: 4rem; margin-top: 4rem; border-t
 	header nav ul a {font-size: 1.8rem;}
 }
 
+
 @media screen and (max-width:1024px) {
 	header {padding: 20px;}
 	header .mo_menu {display: block;}
@@ -107,4 +108,7 @@ footer .f_cont .copy {color: #999; padding-top: 4rem; margin-top: 4rem; border-t
 	footer .f_cont .img_cc img {width: 183px; margin: 30px auto 0;}
 	footer .f_cont .copy {font-size: 11px; margin-top: 25px; padding-top: 25px;}
 	.go_top {right: 2rem; bottom: 3rem;}
+}
+@media screen and (max-width:768px) {
+	.m_menu {padding-top: 70px;}
 }

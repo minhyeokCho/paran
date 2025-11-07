@@ -18,7 +18,7 @@
 	<script src="./assets/js/common.js"></script>
 </head>
 <body>
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/include/header.php') ?>
+	<?php include __DIR__ . '/include/header.php'; ?>
 	<div id="container" class="sub_container overview_container">
 		<!-- sub visual -->
 		<section class="sec_sub_visual">
@@ -118,7 +118,7 @@
 		</section>
 		<!-- // sub content -->
 	</div>
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/include/footer.php') ?>
+	<?php include __DIR__ . '/include/footer.php'; ?>
 	<div class="go_top">
 		<a href="#none"><span class="blind">상단으로 이동</span></a>
 	</div>
