@@ -1,7 +1,7 @@
 <footer>
 	<div class="f_cont">
 		<figure class="img f_logo">
-			<img src="./assets/images/common/logo_main.png" alt="세종 스마트시티">
+			<img src="/teaser2/assets/images/common/logo_main.png" alt="세종 스마트시티">
 		</figure>
 		<div class="m_info">
 			<dl>
@@ -29,8 +29,17 @@
 			<span>(주)한빛커뮤니케이션</span>  |  <span>사업자등록번호 : 314-81-60319</span>  | <span> 대표자 : 이성춘</span>  |  <span>주소 : 대전광역시 유성구 문지로 8(도룡동)</span>
 		</div>
 		<figure class="img img_cc">
-			<img src="./assets/images/common/f_brand.png" alt="계룡건설">
+			<img src="/teaser2/assets/images/common/f_brand.png" alt="계룡건설">
 		</figure>
 		<p class="copy">COPYRIGHT © 엘리프 세종 스마트시티. ALL RIGHTS RESERVED.</p>
 	</div>
 </footer>
+		<div class="go_top">
+			<a href="#none"><span class="blind">상단으로 이동</span></a>
+		</div>
+	</div>
+	<script> 
+		AOS.init();
+	</script>
+</body>
+</html>

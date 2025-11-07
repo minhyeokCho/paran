@@ -27,7 +27,7 @@
 	}
 }
 /* -------------------- #메인 슬라이드 ---------------------------------------- */
-.sec_main_slide {background-color: #fff; padding:15rem 6rem 6rem; position: relative;}
+.sec_main_slide {background-color: #fff; padding:12rem 6rem 6rem; position: relative;}
 .main_slide {border-radius: 5.2rem;}
 .main_slide .item {position: relative; height: 805px;}
 .main_slide .item::after {display: block;; content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0)); opacity: .6; z-index: 1;}
@@ -98,8 +98,8 @@
 .sec_value .card {border-radius: 5.4rem; height: 85rem; position: sticky;}
 .sec_value .card::after {display: block; content: ''; background: url(../images/main/txt_value_card.png) no-repeat 0 0; background-size: 100% auto; width: 72.6rem; height: 11.4rem; position: absolute; top: 16rem; left: 10rem;}
 .sec_value .card1 {background: url(../images/main/card1.jpg) no-repeat center; background-size: cover; top: 120px;}
-.sec_value .card2 {background: url(../images/main/card2.jpg) no-repeat center; background-size: cover; top: 220px;}
-.sec_value .card3 {background: url(../images/main/card3.jpg) no-repeat center; background-size: cover; top: 320px;}
+.sec_value .card2 {background: url(../images/main/card2.jpg) no-repeat center; background-size: cover; top: 180px;}
+.sec_value .card3 {background: url(../images/main/card3.jpg) no-repeat center; background-size: cover; top: 240px;}
 .sec_value .card4 {height: 40rem; top: 420px;}
 .sec_value .card4::after {display: none;}
 .sec_value .card .txt_wrap {position: absolute; right: 14rem; top: 16rem;}
@@ -215,6 +215,7 @@
 	.sec_enhance .cont_wrap.active,
 	.sec_main {cursor: default;}
 	.sec_main_slide .scroll {display: none;}
+	.sec_main_slide {padding: 60px 15px 0;}
 	.sec_value {padding: 80px 15px 0;}
 	.sec_value .card::after {left: 35px;}
 	.sec_value .card {border-radius: 27px; height: 550px; margin-top: -50px;}

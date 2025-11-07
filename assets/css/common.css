@@ -40,7 +40,7 @@ header h1 a {width: 23.9rem; display: block;}
 header h1 a img {width: 100%; height: auto; object-fit: cover;}
 header nav {width: 38%;}
 header nav ul {display: flex; justify-content: space-between;}
-header nav ul a {font-size: 2rem; font-weight: 700; padding: 2rem 0;}
+header nav ul a {font-size: 1.8rem; font-weight: 700; padding: 2rem 0;}
 header .util {display: flex; align-items: center; gap:2.4rem}
 header .util button {width: 17.8rem; height: 4.7rem; border-radius: 2.4rem; font-size: 1.8rem; font-weight: 700; background-color: #bcad96; color: #fff;}
 header .util a {padding-left: 3.4rem; font-weight: 600; background: url(../images/common/icon_call.png) no-repeat left center; background-size: 2.2rem; font-size: 2rem; line-height: 2.2rem;}
@@ -87,7 +87,7 @@ footer .f_cont .copy {color: #999; padding-top: 4rem; margin-top: 4rem; border-t
 @media screen and (max-width:1200px) {
 	header {padding-left: 20px; padding-right: 20px;}
 	header h1 a {width: 20rem; height: 19px;}
-	header nav ul a {font-size: 1.8rem;}
+	header nav ul a {font-size: 1.5rem;}
 }
 
 

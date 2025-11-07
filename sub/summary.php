@@ -1,31 +1,19 @@
-<!doctype html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>사업개요</title>
-	<link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="./assets/css/lib/aos.css" />
-	<link rel="stylesheet" href="./assets/css/common.css" />
-	<link rel="stylesheet" href="./assets/css/sub.css" />
-	<script src="./assets/js/lib/gsap.js"></script>
-	<script src="./assets/js/lib/scrollTrigger.js"></script>
-	<script src="./assets/js/lib/lenis.js"></script>
-	<script src="./assets/js/lib/jquery-3.6.0.min.js"></script>
-	<script src="./assets/js/lib/swiper-bundle.min.js"></script>
-	<script src="./assets/js/lib/aos.js"></script>
-	<script src="./assets/js/common.js"></script>
-</head>
-<body>
-	<?php include __DIR__ . '/include/header.php'; ?>
+<?php include dirname(__DIR__) . '/include/top.php'; ?>
+<?php include dirname(__DIR__) . '/include/header.php'; ?>
 	<div id="container" class="sub_container overview_container">
 		<!-- sub visual -->
 		<section class="sec_sub_visual">
 			<div class="sub_inner">
 				<div class="sub_visual">
-					<h2>SUMMARY</h2>
-					<p>사업개요</p>
+					<figure class="img">
+						<picture>
+								<source srcset="/teaser2/assets/images/sub/sub_visual_overview.png" media="(min-width: 481px)">
+								<source srcset="/teaser2/assets/images/sub/sub_visual_overview_mb.png" media="(max-width: 480px)">
+								<img src="/teaser2/assets/images/sub/sub_visual_overview.png" alt="">
+							</picture>
+					</figure>	
+					<h2 data-aos="fade-up" data-aos-duration="1000">SUMMARY</h2>
+					<p data-aos="fade-up" data-aos-duration="1200">사업개요</p>
 				</div>
 			</div>
 		</section>
@@ -45,7 +33,7 @@
 				<div class="sub_inner">
 					<div class="desc_wrap">
 						<div class="desc_title">
-							<figure class="img"><img src="./assets/images/sub/overview_logo.png" alt="엘리프 세종 스마트시티"></figure>
+							<figure class="img"><img src="/teaser2/assets/images/sub/overview_logo.png" alt="엘리프 세종 스마트시티"></figure>
 						</div>
 						<div class="desc_sub">
 							<span>총 424세대</span>
@@ -110,17 +98,12 @@
 			</div>
 			<div class="obj_wrap">
 				<picture>
-					<source srcset="./assets/images/sub/sub_text_obj.png" media="(min-width: 481px)">
-					<source srcset="./assets/images/sub/sub_text_obj_mb.png" media="(max-width: 480px)">
-					<img src="./assets/images/sub/sub_text_obj.png" alt="">
+					<source srcset="/teaser2/assets/images/sub/sub_text_obj.png" media="(min-width: 481px)">
+					<source srcset="/teaser2/assets/images/sub/sub_text_obj_mb.png" media="(max-width: 480px)">
+					<img src="/teaser2/assets/images/sub/sub_text_obj.png" alt="">
 				</picture>
 			</div>
 		</section>
 		<!-- // sub content -->
 	</div>
-	<?php include __DIR__ . '/include/footer.php'; ?>
-	<div class="go_top">
-		<a href="#none"><span class="blind">상단으로 이동</span></a>
-	</div>
-</body>
-</html>
+	<?php include dirname(__DIR__) . '/include/footer.php'; ?>

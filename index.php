@@ -1,24 +1,4 @@
-<!doctype html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>엘리프세종스마트시티</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap">
-	<link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="./assets/css/lib/aos.css" />
-	<link rel="stylesheet" href="./assets/css/common.css" />
-	<link rel="stylesheet" href="./assets/css/main.css" />
-	<script src="./assets/js/lib/scrollTrigger.js"></script>
-	<script src="./assets/js/lib/gsap.js"></script>
-	<script src="./assets/js/lib/lenis.js"></script>
-	<script src="./assets/js/lib/jquery-3.6.0.min.js"></script>
-	<script src="./assets/js/lib/swiper-bundle.min.js"></script>
-	<script src="./assets/js/lib/aos.js"></script>
-	<script src="./assets/js/common.js"></script>
-</head>
-<body>
+<?php include __DIR__ . '/include/top.php'; ?>
 	<section class="sec_main">
 		<figure class="video_wrap">
 			<video autoplay loop muted playsinline preload="metadata">
@@ -129,10 +109,10 @@
 		</section>
 		<section class="sec_value">
 			<div class="sec_tit">
-				<figure class="img">
+				<figure class="img" data-aos="fade-up" data-aos-duration="1000">
 					<img src="./assets/images/main/txt_brand.png" alt="ELIF세종">
 				</figure>
-				<h2>SPECIAL VALUE</h2>
+				<h2 data-aos="fade-up" data-aos-duration="1000">SPECIAL VALUE</h2>
 			</div>
 			<div class="value_card">
 				<div class="card card1">
@@ -158,11 +138,11 @@
 		</section>
 		<section class="sec_design">
 			<div class="sec_tit">
-				<figure class="img">
+				<figure class="img"  data-aos="fade-up" data-aos-duration="1000">
 					<img src="./assets/images/main/txt_design.png" alt="ELIF세종">
 				</figure>
-				<h2>SPECIAL DESIGN</h2>
-				<p>일상을 배려한 설계로 변치 않을 주거 가치를 만나보세요</p>
+				<h2  data-aos="fade-up" data-aos-duration="1000">SPECIAL DESIGN</h2>
+				<p  data-aos="fade-up" data-aos-duration="1000">일상을 배려한 설계로 변치 않을 주거 가치를 만나보세요</p>
 			</div>
 			<div class="design_slide swiper">
 				<div class="swiper-wrapper">
@@ -228,11 +208,11 @@
 				</div>
 				<div class="intro_wrap">
 					<div class="txt_wrap">
-						<figure class="img">
+						<figure class="img"  data-aos="fade-up" data-aos-duration="1000">
 							<img src="./assets/images/main/txt_enhance.png" alt="ELIF세종">
 						</figure>
-						<h2>ENHANCE</h2>
-						<h2>YOUR <i></i> LIFE</h2>
+						<h2  data-aos="fade-up" data-aos-duration="1000">ENHANCE</h2>
+						<h2  data-aos="fade-up" data-aos-duration="1000">YOUR <i></i> LIFE</h2>
 					</div>
 				</div>
 				<div class="cont_wrap">
@@ -294,12 +274,3 @@
 			</div>
 		</section>
 		<?php include __DIR__ . '/include/footer.php'; ?>
-		<div class="go_top">
-			<a href="#none"><span class="blind">상단으로 이동</span></a>
-		</div>
-	</div>
-	<script> 
-		AOS.init();
-	</script>
-</body>
-</html>
