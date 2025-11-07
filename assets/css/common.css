@@ -4,12 +4,6 @@
 						《 공통 레이아웃 스타일 》
 ************************************************************************************************************************************************************ */
 
-/*
-	z-index 위계
-
-	.site_wrap		999
-*/
-
 /* ============================== [ 레이아웃 리셋 Layout Reset ] ========================================================================================== */
 /* Reset */
 html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
@@ -23,19 +17,18 @@ select {font:16px/1.2em 'Pretendard',sans-serif;}
 * {word-wrap:break-word; word-break:keep-all; box-sizing: border-box;}
 
 /* ============================== [ 공통레이아웃 ] ========================================================================================== */
-.inner {width:100%; max-width:1480px; margin:0 auto; padding:0 20px; box-sizing:border-box;}
 
 /* -------------------- #header ---------------------------------------- */
 html {font-size:62.5%;}
 body {font-size:1.6rem;}
 @media only screen and (max-width: 768px) {
-    html {font-size:56.3%;}
+	html {font-size:56.3%;}
 }
 @media only screen and (min-width: 768px) and (max-width: 1239px){
-    html {font-size:56.3%;}
+	html {font-size:56.3%;}
 }
 @media only screen and (max-width: 767px) {
-    html {font-size:50%;}
+	html {font-size:50%;}
 }
 body.overflow-hidden {overflow: hidden;}
 
@@ -52,6 +45,14 @@ header .util {display: flex; align-items: center; gap:2.4rem}
 header .util button {width: 17.8rem; height: 4.7rem; border-radius: 2.4rem; font-size: 1.8rem; font-weight: 700; background-color: #bcad96; color: #fff;}
 header .util a {padding-left: 3.4rem; font-weight: 600; background: url(../images/common/icon_call.png) no-repeat left center; background-size: 2.2rem; font-size: 2rem; line-height: 2.2rem;}
 header .util a span {font-weight: 700;}
+
+/* 모바일메뉴 */
+.m_menu {display: none; position: fixed; left: 0; top: 0; padding-top: 100px; height: 100vh; z-index: 100; background-color: #e3e0d1; width: 100%;}
+.m_menu .m_wrap {padding: 0 30px;}
+.m_menu .m_wrap > ul li a {border-top: 1px solid #afada1; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; height: 50px; font-weight: 600; font-size: 20px; color: #53504e;}
+.m_menu .m_wrap .box {height: 105px; background-color: #d9d6c7; border-top: 1px solid #afada1; display: flex;; align-items: center; justify-content: center; text-align: center;}
+.m_menu .m_wrap .box ul {width: 100%;}
+.m_menu .m_wrap .box a {font-size: 14px; font-weight: 600; color: #53504e; line-height: 25px; display: block; width: 100%;}
 
 /* ============================== [ footer ] ========================================================================================== */
 footer {background-color: #fff; padding: 6rem; text-align: center;}
@@ -107,10 +108,3 @@ footer .f_cont .copy {color: #999; padding-top: 4rem; margin-top: 4rem; border-t
 	footer .f_cont .copy {font-size: 11px; margin-top: 25px; padding-top: 25px;}
 	.go_top {right: 2rem; bottom: 3rem;}
 }
-
-.m_menu {display: none; position: fixed; left: 0; top: 0; padding-top: 100px; height: 100vh; z-index: 100; background-color: #e3e0d1; width: 100%;}
-.m_menu .m_wrap {padding: 0 30px;}
-.m_menu .m_wrap > ul li a {border-top: 1px solid #afada1; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; height: 50px; font-weight: 600; font-size: 20px; color: #53504e;}
-.m_menu .m_wrap .box {height: 105px; background-color: #d9d6c7; border-top: 1px solid #afada1; display: flex;; align-items: center; justify-content: center; text-align: center;}
-.m_menu .m_wrap .box ul {width: 100%;}
-.m_menu .m_wrap .box a {font-size: 14px; font-weight: 600; color: #53504e; line-height: 25px; display: block; width: 100%;}

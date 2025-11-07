@@ -5,17 +5,14 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>엘리프세종스마트시티</title>
-	<!-- GSAP Core 라이브러리 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-	<!-- ScrollTrigger 플러그인 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-	<script src="https://unpkg.com/@studio-freight/lenis/dist/lenis.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap">
 	<link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="./assets/css/lib/aos.css" />
 	<link rel="stylesheet" href="./assets/css/common.css" />
 	<link rel="stylesheet" href="./assets/css/main.css" />
+	<script src="./assets/js/lib/scrollTrigger.js"></script>
+	<script src="./assets/js/lib/gsap.js"></script>
+	<script src="./assets/js/lib/lenis.js"></script>
 	<script src="./assets/js/lib/jquery-3.6.0.min.js"></script>
 	<script src="./assets/js/lib/swiper-bundle.min.js"></script>
 	<script src="./assets/js/lib/aos.js"></script>
@@ -47,48 +44,7 @@
 		<div class="cursor"></div>
 	</section>
 	<div id="contanier">
-		<!-- header -->
-		<header>
-			<button class="mo_menu"></button>
-			<h1>
-				<a href="#" title="엘리프세종스마트시티">
-					<img src="./assets/images/common/logo_main.png" alt="엘리프">
-				</a>
-			</h1>
-			<nav>
-				<ul>
-					<li><a href="#"><span>사업개요</span></a></li>
-					<li><a href="#"><span>브랜드소개</span></a></li>
-					<li><a href="#"><span>프리미엄</span></a></li>
-					<li><a href="#"><span>오시는길</span></a></li>
-					<li><a href="#"><span>관심고객등록</span></a></li>
-				</ul>
-			</nav>
-			<div class="util">
-				<button type="button">관심고객등록</button>
-				<a href="#" class="tel">044) <span>884.5543</span></a>
-			</div>
-		</header>
-		<div class="m_menu">
-			<div class="m_wrap">
-				<ul>
-					<li><a href="#"><span>사업개요</span></a></li>
-					<li><a href="#"><span>입지환경</span></a></li>
-					<li><a href="#"><span>브랜드소개</span></a></li>
-					<li><a href="#"><span>프리미엄</span></a></li>
-					<li><a href="#"><span>오시는길</span></a></li>
-					<li><a href="#"><span>관심고객등록</span></a></li>
-				</ul>
-				<div class="box">
-					<ul>
-						<li><a href="#">관심고객등록</a></li>
-						<li><a href="#">언론보도</a></li>
-						<li><a href="#">오시는길</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--// header -->
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/include/header.php') ?>
 		<section class="sec_main_slide">
 			<div class="main_slide swiper">
 				<div class="swiper-wrapper">
@@ -337,42 +293,7 @@
 				</div>
 			</div>
 		</section>
-		<footer>
-			<div class="f_cont">
-				<figure class="img f_logo">
-					<img src="./assets/images/common/logo_main.png" alt="세종 스마트시티">
-				</figure>
-				<div class="m_info">
-					<dl>
-						<dt>문의 :</dt>
-						<dd><strong>044) 864-5543</strong></dd>
-					</dl>
-					<dl>
-						<dt>총 424세대</dt>
-						<dd>59㎡ / 74㎡ / 80㎡ / 84㎡</dd>
-					</dl>
-				</div>
-				<div class="pc_info">
-					<span>현장 : 044)864.5543</span>   |   <span>견본주택 : 세종특별자치시 대평동 123-30번지</span>  |   <span>총 424세대(59㎡ / 74㎡ / 80㎡ / 84㎡)</span>
-				</div>
-				<div class="mobile_txt">
-					현장 : 경남 창원명곡 공공주택지구 B-1 BL<br/>(창원시 의창구 명곡동 일원) 
-				</div>
-				<div class="f_info">
-					<p>* 각종 개발계획 및 예정사항 등은 추후 관계기관의 사정에 따라 변경 및 취소될 수 있으며, 이는 당사와 무관함을 알려드립니다. </p>
-					<p>* 본 홈페이지의 이미지, 사진 및 내용은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있습니다. </p>
-					<p>* 본 홈페이지의 제작과 정상 오탈자가 있을 수 있으므로 계약 시 반드시 확인하시기 바랍니다. </p>
-					<p>* 세부 설계내용은 향후 인허가 과정에서 변동될 수 있습니다.</p>
-				</div>
-				<div class="addr">
-					<span>(주)한빛커뮤니케이션</span>  |  <span>사업자등록번호 : 314-81-60319</span>  | <span> 대표자 : 이성춘</span>  |  <span>주소 : 대전광역시 유성구 문지로 8(도룡동)</span>
-				</div>
-				<figure class="img img_cc">
-					<img src="./assets/images/common/f_brand.png" alt="계룡건설">
-				</figure>
-				<p class="copy">COPYRIGHT © 엘리프 세종 스마트시티. ALL RIGHTS RESERVED.</p>
-			</div>
-		</footer>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/include/footer.php') ?>
 		<div class="go_top">
 			<a href="#none"><span class="blind">상단으로 이동</span></a>
 		</div>

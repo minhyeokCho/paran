@@ -1,33 +1,30 @@
 @charset "utf-8";
 
 /* ============================== [ 메인 ] ========================================================================================== */
-/* #contanier {transition: .5s;}
-#contanier.hide {opacity: 0; visibility: hidden; height: 0;} */
+
 /* -------------------- #메인 visual ---------------------------------------- */
-.sec_main {cursor: none; height: 100vh; display: flex; align-items: center; justify-content: center;}
+.sec_main {cursor: none; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;}
 .sec_main::after {display: block; content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: #004538; opacity: .5; z-index: 2;}
 .sec_main .video_wrap {position: absolute; width: 100%; height: 100vh; overflow: hidden; z-index: 1;}
-.sec_main video {position: absolute; left: 0; top: 0; width: 100%; height: auto;}
+.sec_main video {position: absolute; left: 0; top: 0; width: 100%; height: auto; min-height: 900px;}
 .sec_main .cont {position: relative; height: 755px; width: 508px; display: flex; align-items: center; flex-direction: column; background:url(../images/main/bg_visual.png) no-repeat center; background-size: 100% auto; z-index: 3}
 .sec_main .cont .top_logo {width: 136px; padding-top: 67px;}
 .sec_main .cont .txt_img {width: 315px; padding-top: 98px;}
 .sec_main .cont .main_logo {width: 193px; padding-top: 27px;}
 .sec_main .cont .btm_logo {width: 109px; position: absolute; left: 50%; transform: translateX(-50%); bottom: 15px;}
 .sec_main .cont i {margin-top: 30px; display: block; width: 1px; height: 75px; background-color: rgba(255, 255, 255, .5);}
-
-
 .cursor {width: 150px; height: 150px; position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
 .cursor::before {animation: circle 6s infinite linear; transform-origin:center center;  background: url(../images/main/txt_skip.png) no-repeat center; background-size: 100% auto; width: 100%; height: 100%; display: block; content: '';}
 .cursor::after {display: block; content: 'Skip'; width: 80px; height: 80px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; background-color: #bcad96; color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 2.1rem; font-weight: 500;}
 .sec_enhance .cursor {position: absolute;}
 .sec_enhance .cursor::after {content: 'more';}
 @keyframes circle {
-    0% {
-        transform: rotate(0)
-    }
-    100% {
-        transform: rotate(360deg)
-    }
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
 }
 /* -------------------- #메인 슬라이드 ---------------------------------------- */
 .sec_main_slide {background-color: #fff; padding:15rem 6rem 6rem; position: relative;}
@@ -65,21 +62,19 @@
 .sec_main_slide .scroll span.bar {position: relative; width: 1px; height: 10.5rem; background-color: rgba(255, 255, 255, .5);}
 .sec_main_slide .scroll span.bar::after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; transform: scaleY(0); transform-origin: top; animation: growLine 1.5s ease-in-out infinite;}
 @keyframes growLine {
-    0% {
-        transform: scaleY(0);
-        opacity: 1;
-    }
-    80% {
-        transform: scaleY(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scaleY(1);
-        opacity: 0;
-    }
+	0% {
+		transform: scaleY(0);
+		opacity: 1;
+	}
+	80% {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scaleY(1);
+		opacity: 0;
+	}
 }
-
-
 
 /* -------------------- #브랜드 ---------------------------------------- */
 .sec_brand .brand_tit {position: relative; padding-top: 16.5rem; text-align: center;}
@@ -94,7 +89,6 @@
 .sec_brand .brand .logo .img {width: 39.1rem;}
 .sec_brand .brand strong {margin-top: 5rem; font-size: 2.3rem; font-weight: 600; color: #fff;}
 .sec_brand .brand p {color: #fff; font-size: 1.8rem; padding-top: 1.2rem; margin-top: 1.2rem; display: inline-block; border-top: 1px solid rgba(255, 255, 255, .5);}
-
 
 /* -------------------- #value ---------------------------------------- */
 .sec_value {padding: 18rem 6rem 0;}
@@ -113,7 +107,7 @@
 .sec_value .card h3 span {font-weight: 400;}
 .sec_value .card p {margin-top: 3rem; color: #fff; line-height: 1.5; font-size: 2.4rem;}
 
-/* -------------------- #value ---------------------------------------- */
+/* -------------------- #design ---------------------------------------- */
 .sec_design {padding-top: 21.6rem; padding-bottom: 16rem; position: relative;}
 .sec_design::before {display: block; content: ''; width: 1px; height: 16rem; background-color: #cdcdcd; position: absolute; left: 50%; top: 0;}
 .sec_design .sec_tit {margin-bottom: 6rem; position: relative;}
@@ -138,7 +132,7 @@
 .sec_design .design_slide .design_bullet {margin: 3rem auto 0; width: 30rem; height: 4px; background-color: #ebebeb; position: relative; left: 0; top: 0;}
 .sec_design .design_slide .design_bullet .swiper-pagination-progressbar-fill {background-color: #111;}
 
-/* -------------------- #value ---------------------------------------- */
+/* -------------------- #enhance ---------------------------------------- */
 .sticky {position: sticky; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden;}
 .sticky .bg_wrap {width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2; transform: translateY(50%);}
 .sticky .bg_wrap::after {content: ""; position: absolute; background: rgba(0, 0, 0, 0); inset: var(--brandBgMask); box-shadow: 40px 40px 60px rgba(0, 0, 0, .2); z-index: 1;}
@@ -189,6 +183,7 @@
 .contact_wrap .txt_wrap dd span {font-size: 2.6rem; font-weight: 700; color: #004538;}
 .contact_wrap .img_wrap .img {width: 61.9rem; border-radius: 4.3rem; overflow: hidden; box-shadow: -14px 18px 27px 0 rgba(0,0,0,0.13);}
 
+/* -------------------- 반응형 ---------------------------------------- */
 @media screen and (max-width:1680px) {
 	.sec_main video {width: auto; height: 100%;}
 	
@@ -216,6 +211,9 @@
 }
 
 @media screen and (max-width:1024px) {
+	.cursor {display: none !important; }
+	.sec_enhance .cont_wrap.active,
+	.sec_main {cursor: default;}
 	.sec_main_slide .scroll {display: none;}
 	.sec_value {padding: 80px 15px 0;}
 	.sec_value .card::after {left: 35px;}
@@ -238,6 +236,7 @@
 	.sec_main_slide .open  {right: 40px; top: 130px;}
 }
 @media screen and (max-width:768px) {
+	.sec_main video {min-height: 0;}
 	.sec_main .cont {width: 273px; height: 405px;}
 	.sec_main .cont .top_logo {width: 68px; padding-top: 37px;}
 	.sec_main .cont .txt_img {width: 157px; padding-top: 67px;}
